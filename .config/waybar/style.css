@@ -17,7 +17,6 @@ window#waybar {
   padding: 4px;
   border-radius: 20px;
   margin-left: 12px;
-
 }
 
 #workspaces button {
@@ -29,8 +28,13 @@ window#waybar {
 #workspaces button.active {
   color: @on_primary_fixed;
   background-color: @primary_fixed_dim;
-  transition: margin 150ms ease-in-out, padding 150ms ease-in-out;
-  transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+  transition:
+    margin 150ms ease-in-out,
+    padding 150ms ease-in-out;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    padding 0.2s ease;
   padding: 4px 15px;
   border-radius: 15px;
 }
@@ -41,8 +45,13 @@ window#waybar {
 
 #workspaces button:hover {
   background-color: @inverse_primary;
-  transition: margin 150ms ease-in-out, padding 150ms ease-in-out;
-  transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+  transition:
+    margin 150ms ease-in-out,
+    padding 150ms ease-in-out;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    padding 0.2s ease;
   padding: 4px 15px;
 }
 
@@ -81,9 +90,7 @@ window#waybar {
   padding-bottom: 2px;
   padding-left: 20px;
   padding-right: 25px;
-
 }
-
 
 #custom-power {
   color: @primary;

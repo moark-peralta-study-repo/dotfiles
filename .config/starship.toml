@@ -34,15 +34,15 @@ $line_break$character"""
 palette = 'colors'
 
 [palettes.colors]
-color1 = '#afc6ff'
-color2 = '#132f60'
-color3 = '#c5c6d0'
-color4 = '#1e1f25'
-color5 = '#132f60'
-color6 = '#121318'
-color7 = '#121318'
-color8 = '#afc6ff'
-color9 = '#dfbbde'
+color1 = '#bacf82'
+color2 = '#273500'
+color3 = '#c6c8b8'
+color4 = '#1f2019'
+color5 = '#273500'
+color6 = '#12140d'
+color7 = '#12140d'
+color8 = '#bacf82'
+color9 = '#a1d0c7'
 
 # OS
 [os]
