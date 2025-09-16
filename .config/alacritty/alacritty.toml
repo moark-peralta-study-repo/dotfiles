@@ -1,0 +1,23 @@
+general.import = ["colors.toml"]
+general.live_config_reload = true
+
+[cursor]
+unfocused_hollow = false
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[window]
+dynamic_title = true
+opacity = 0.8
+
+[window.padding]
+x = 25
+y = 25
+
+[font]
+size = 26.0
+normal = {family = "Cartograph CF"}
+
+

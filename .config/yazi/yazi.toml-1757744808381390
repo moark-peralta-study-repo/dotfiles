@@ -1,0 +1,47 @@
+# A TOML linter such as https://taplo.tamasfe.de
+[manager]
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+linemode = "size"
+
+[preview]
+# Default backend for images
+image_backend = "viu"
+
+# Limits for performance
+max_width  = 120
+max_height = 60
+
+# Previews for different filetypes
+previewers = [
+  # Images
+  { name = "image", run = "viu -t -w {width} -h {height} {file}" },
+
+  # PDFs (first page as jpeg)
+  { name = "pdf", run = "pdftoppm -f 1 -singlefile -jpeg {file} -" },
+
+  # Videos (thumbnail)
+  { name = "video", run = "ffmpegthumbnailer -i {file} -o -" },
+
+  # Audio (metadata)
+  { name = "audio", run = "ffprobe -hide_banner -show_format -show_streams {file}" },
+
+  # Archives (list contents)
+  { name = "archive", run = "bsdtar -tf {file}" },
+
+  # JSON
+  { name = "json", run = "jq . {file}" },
+
+  # Markdown
+  { name = "markdown", run = "glow -s dark {file}" },
+
+  # Code/Text (syntax highlight)
+  { name = "code", run = "bat --style=plain --color=always {file}" },
+
+  # Fallback
+  { name = "fallback", run = "file --mime-type -b {file}" },
+]
+

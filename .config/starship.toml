@@ -1,0 +1,169 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Unified format (Gruvbox layout with Matugen colors)
+format = """
+[](color1)\
+$os\
+$username\
+[](bg:color2 fg:color1)\
+$directory\
+[](fg:color2 bg:color8)\
+$git_branch\
+$git_status\
+[](fg:color8 bg:color3)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:color3 bg:color6)\
+$docker_context\
+$conda\
+$pixi\
+[](fg:color6 bg:color7)\
+$time\
+[ ](fg:color7)\
+$line_break$character"""
+
+# Matugen palette
+palette = 'colors'
+
+[palettes.colors]
+color1 = '#afc6ff'
+color2 = '#132f60'
+color3 = '#c5c6d0'
+color4 = '#1e1f25'
+color5 = '#132f60'
+color6 = '#121318'
+color7 = '#121318'
+color8 = '#afc6ff'
+color9 = '#dfbbde'
+
+# OS
+[os]
+disabled = false
+style = "bg:color1 fg:color2"
+
+[os.symbols]
+Linux = "󰌽"
+Ubuntu = "󰕈"
+Arch = "󰣇"
+Manjaro = ""
+Debian = "󰣚"
+Fedora = "󰣛"
+Macos = "󰀵"
+Windows = "󰍲"
+
+# Username
+[username]
+show_always = true
+style_user = "bg:color1 fg:color2"
+style_root = "bg:color1 fg:color2"
+format = '[ $user ]($style)'
+
+# Directory
+[directory]
+style = "fg:color3 bg:color2"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+# Git
+[git_branch]
+symbol = ""
+style = "bg:color8"
+format = '[[ $symbol $branch ](fg:color5 bg:color8)]($style)'
+
+[git_status]
+style = "bg:color8"
+format = '[[($all_status$ahead_behind )](fg:color5 bg:color8)]($style)'
+
+# Languages
+[nodejs]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[c]
+symbol = " "
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[php]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[java]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol( $version) ](fg:color5 bg:color3)]($style)'
+
+[python]
+symbol = "🐍"
+style = "bg:color3"
+format = '[[ $symbol( $version)( $virtualenv) ](fg:color5 bg:color3)]($style)'
+
+# Docker/Conda/Pixi
+[docker_context]
+symbol = ""
+style = "bg:color6"
+format = '[[ $symbol( $context) ](fg:color5 bg:color6)]($style)'
+
+[conda]
+style = "bg:color6"
+format = '[[ $symbol( $environment) ](fg:color5 bg:color6)]($style)'
+
+[pixi]
+style = "bg:color6"
+format = '[[ $symbol( $version)( $environment) ](fg:color5 bg:color6)]($style)'
+
+# Time
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color7"
+format = '[[  $time ](fg:color3 bg:color7)]($style)'
+
+# Prompt character
+# [character]
+# success_symbol = '[🞈](color9 bold)'
+# error_symbol = '[🞈](bold fg:color4)'
+# vicmd_symbol = '[🞈](#f9e2af)'
