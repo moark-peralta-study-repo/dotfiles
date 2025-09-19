@@ -1,9 +1,7 @@
--- lua/plugins/lsp.lu
--- lua/plugins/lsp.lua
 return {
   -- mason.nvim: manage external tools
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "luacheck",
