@@ -1,2 +1,6 @@
 @import "colors.rasi"
+//@theme "/home/moe/.local/share/rofi/themes/rounded-template.rasi"
+
+//@theme "/nix/store/vpjv093i335jgnz23sglifrj9rlsamcv-rofi-1.7.9/share/rofi/themes/gruvbox-dark-hard.rasi"
+
 @theme "/home/moe/.local/share/rofi/themes/rounded-template.rasi"
