@@ -1,8 +1,13 @@
 vim.g.mapleader = " "
-
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+
+--Tmux shit test
+vim.opt.timeout = true
+vim.opt.timeoutlen = 500
+vim.opt.ttimeout = true
+vim.opt.ttimeoutlen = 10
 
 vim.opt.number = true
 
@@ -20,8 +25,8 @@ vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.wrap = true
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.wildignore:append({ "**" })

@@ -1,6 +1,9 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- Paste without yanking Text
+keymap.set("v", "p", '"_dP')
+
 keymap.set("n", "x", '"_x')
 -- Increment / Decrement
 keymap.set("n", "+", "<C-a>")
@@ -50,8 +53,8 @@ keymap.set("n", "<leader>w", ":bdelete<CR>", opts)
 keymap.set("n", "<Leader>n", ":nohlsearch<CR>", opts)
 
 -- Move lines up and down
--- keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)
--- keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
+keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)
+keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
 
 --Comments
 keymap.set("n", "<leader>c", function()
@@ -65,3 +68,6 @@ keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>")
 keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>")
 keymap.set("n", "<leader>xp", vim.diagnostic.goto_prev)
 keymap.set("n", "<leader>xn", vim.diagnostic.goto_next)
+
+-- Show Visual Lines
+keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Toggle full diagnostics" })
