@@ -14,7 +14,6 @@ return {
   },
 
   opts = {
-    -- Formatters per filetype
     formatters_by_ft = {
       lua = { "stylua" },
       javascript = { "biome" },
@@ -27,7 +26,6 @@ return {
       java = { "google_java_format" },
     },
 
-    -- Custom formatter definitions (optional)
     formatters = {
       stylua = {
         command = "stylua",

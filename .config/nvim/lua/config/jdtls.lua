@@ -105,7 +105,16 @@ function M.setup_jdtls()
   local bundles = get_bundles()
 
   -- Determine root dir
-  local root_dir = jdtls.setup.find_root({ ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" })
+  -- local root_dir = jdtls.setup.find_root({ ".git", "mvnw", "gradlew", "pom.xml", "build.gradle", ".java-workspace" })
+  --
+  local root_dir = require("jdtls.setup").find_root({
+    ".git",
+    "mvnw",
+    "gradlew",
+    "pom.xml",
+    "build.gradle",
+    ".java-workspace",
+  }) or vim.fn.getcwd()
 
   local capabilities
   local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim-lsp")

@@ -1,31 +1,34 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.9.1",
-    opts = {
-      ensure_installed = {
-        "javascript",
-        "typescript",
-        "tsx",
-        "css",
-        "scss",
-        "lua",
-        "json",
-        "graphql",
-        "http",
-        "sql",
-        "vim",
-        "gitignore",
-      },
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      query_linter = {
-        enable = true,
-        use_virtual_text = true,
-        lint_events = { "BufWrite", "CursorHold" },
-      },
+    dependencies = {
+      "windwp/nvim-ts-autotag",
     },
+
+    build = ":TSUpdate",
+    config = function()
+      local ts_config = require("nvim-treesitter.configs")
+
+      ts_config.setup({
+        ensure_installed = {
+          "vim",
+          "vimdoc",
+          "lua",
+          "java",
+          "javascript",
+          "typescript",
+          "html",
+          "css",
+          "json",
+          "jsx",
+          "tsx",
+          "markdown",
+          "markdown_inline",
+          "gitignore",
+        },
+        highlight = { enable = true },
+        autotag = { enable = true },
+      })
+    end,
   },
 }

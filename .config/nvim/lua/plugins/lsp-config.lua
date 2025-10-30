@@ -12,13 +12,12 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "jdtls",
+          -- "jdtls",
           "ts_ls",
-          "shfmt",
           "bashls",
-          "tailwindcss-language-server",
+          "tailwindcss",
           "cssls",
-          "tsserver",
+          "ts_ls",
           "svelte",
         },
       })
